@@ -1,0 +1,49 @@
+1st Method:
+
+  string reverseWord(string str)
+    {
+        // Your code goes here
+        reverse(str.begin(),str.end());
+        return str;
+    }
+
+2nd Method:
+
+  string reverseWord(string str)
+    {
+        // Your code goes here
+        
+        int n=str.size();
+        for(int i=0;i<n/2;i++){
+            int temp=str[i];
+            str[i]=str[n-i-1];
+            str[n-i-1]=temp;
+        }
+        
+        return str;
+    }
+
+ 3rd Method: 2 pointer approach
+
+    string reverseWord(string str)
+    {
+        // Your code goes here
+        int n=str.size();
+        int start=0;
+        int end=n-1;
+        while(start<end){
+            int temp=str[start];
+            str[start]=str[end];
+           str[end]=temp;
+           
+           start++; end--;
+        }
+        return str;
+    }
+
+
+
+
+
+
+    
